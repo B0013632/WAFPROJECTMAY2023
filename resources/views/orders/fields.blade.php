@@ -9,16 +9,7 @@
 	</select>
 </div>
 
-<!-- Employee Id Field -->
-<div class="form-group col-sm-6">
-    {!! Form::label('employee_id', 'Employee Id:') !!}
-    <select name="employee_id" class="form-control">
-	<option value=""disabled selected>Select your Server's ID</option>
-		@foreach ($employees as $employee)
-			<option value="{{ $employee->id }}">{{ $employee->id }}</option>
-		@endforeach
-	</select>
-</div>
+<input type="hidden" name="employee_id" value="{{Auth::user()->employee->id}}">
 
 <!-- Order Description Field -->
 <div class="form-group col-sm-6">

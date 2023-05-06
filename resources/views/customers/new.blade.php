@@ -2,30 +2,12 @@
 @section('content')
 <form action="/customers" method="post">
     @csrf
-    <div>
-        <label for="firstname">First Name:</label>
-        <input type="text" name="firstname" required>
-    </div>
-    <div>
-        <label for="surname">Surname:</label>
-        <input type="text" name="surname" required>
-    </div>
-    <div>
-        <label for="email">Email:</label>
-        <input type="email" name="email" required>
-    </div>
-    <div>
-        <label for="phone">Phone:</label>
-        <input type="text" name="phone" required>
-    </div>
-    <div>
-        <label for="vip">VIP:</label>
-        <input type="checkbox" name="vip" value="1">
-    </div>
-    <div>
-        <label for="comments">Comments:</label>
-        <textarea name="comments"></textarea>
-    </div>
+     Enter your first name:<input type="text" name="firstname"><br> 
+     Enter your surname:<input type="text" name="surname"><br> 
+	 Enter your email:<input type="text" name="email"><br> 
+	 Enter your phone:<input type="text" name="phone"><br> 
+	 Enter your vip:<input type="checkbox" name="vip" value="1"><br> 
+	 Enter your comments:<input type="text" name="comments"><br> 
     <button type="submit">Create</button>
 </form>
 @endsection 

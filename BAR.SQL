@@ -111,3 +111,10 @@ drop database if exists bar;
   insert into reservations ( table_id, customer_id, reservationDate, reservationTime, partySize, specialRequests)values ( 1, 2, '2023-05-01', '19:00:00', 4, 'Window seat preferred');
  insert into reservations ( table_id, customer_id, reservationDate, reservationTime, partySize, specialRequests)values ( 2, 2, '2023-05-03', '18:30:00', 6, NULL);
  insert into reservations ( table_id, customer_id, reservationDate, reservationTime, partySize, specialRequests)values ( 3, 1, '2023-05-05', '20:00:00', 2, 'Anniversary celebration');
+ 
+ alter table employees add column userid bigint UNSIGNED;
+ alter table employees add constraint FK_employee_user foreign key(userid) references users(id);
+ ALTER TABLE employees add constraint FK_employee_user_unique UNIQUE (userid); 
+
+SELECT * FROM users
+update member set userid=3 where name="Morgan Bartlett";

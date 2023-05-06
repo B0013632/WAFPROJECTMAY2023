@@ -76,4 +76,9 @@ class employees extends Model
     {
         return $this->hasMany(\App\Models\Order::class, 'employee_id');
     }
+	
+	public function user()
+	{
+    return $this->belongsTo(\App\User::class,'userid','id');
+	}
 }

@@ -47,3 +47,7 @@ Route::resource('orders', App\Http\Controllers\ordersController::class);
 
 Route::resource('reservations', App\Http\Controllers\reservationsController::class);
 
+Route::get('/loggedInEmployees','employeesController@getLoggedInEmployeesDetails');
+
+Route::get('/customers/new', 'App\Http\Controllers\CustomerController@new');
+Route::post('/customers/create', 'App\Http\Controllers\CustomerController@create')->name('customers.create'); 

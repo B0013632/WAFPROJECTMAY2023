@@ -9,6 +9,35 @@ use App\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
 use Flash;
 use Response;
+use \App\Models\Customer as Customer; 
+
+
+
+
+
+
+class CustomerController extends Controller 
+{ 
+    public function new() 
+    { 
+        return view('customers.new'); 
+    } 
+
+    public function create(Request $request) 
+    { 
+         echo "firstname= " . $request->firstname;
+         echo "<br>surname= " . $request->surname;
+		 echo "<br>email= " . $request->email;
+		 echo "<br>phone= " . $request->phone;
+		 echo "<br>vip= " . $request->vip;
+		 echo "<br>comments= " . $request->comments;
+    } 
+} 
+
+
+
+
+
 
 class customersController extends AppBaseController
 {
