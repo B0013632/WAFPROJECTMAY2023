@@ -42,17 +42,17 @@ drop database if exists bar;
  );
  
  create table reservations (
-    reservation_id int AUTO_INCREMENT,
+    id int AUTO_INCREMENT,
     table_id int,
     customer_id int,
     reservationDate date,
     reservationTime time,
     partySize int,
     specialRequests varchar(255),
-	created_at datetime,
+	 created_at datetime,
     updated_at datetime,
     deleted_at datetime,
-    primary key (reservation_id),
+    primary key (id),
     foreign key (customer_id) references customers(id),
     foreign key (table_id) references tables(id)
 );
@@ -96,6 +96,6 @@ drop database if exists bar;
  insert into orders (customer_id, employee_id, table_id, order_description, order_date, order_time, total)values ( 3, 1, 4, 'Four Tequilias', '2023-04-30', '20:00:00', 40.00); 
  insert into orders (customer_id, employee_id, table_id, order_description, order_date, order_time, total)values ( 4, 4, 3, 'Eight Coronas', '2023-04-30', '20:30:00', 40.00);
  
- insert into reservations (reservation_id, table_id, customer_id, reservationDate, reservationTime, partySize, specialRequests)values (1, 1, 2, '2023-05-01', '19:00:00', 4, 'Window seat preferred');
- insert into reservations (reservation_id, table_id, customer_id, reservationDate, reservationTime, partySize, specialRequests)values (2, 2, 2, '2023-05-03', '18:30:00', 6, NULL);
- insert into reservations (reservation_id, table_id, customer_id, reservationDate, reservationTime, partySize, specialRequests)values (3, 3, 1, '2023-05-05', '20:00:00', 2, 'Anniversary celebration');
+  insert into reservations ( table_id, customer_id, reservationDate, reservationTime, partySize, specialRequests)values ( 1, 2, '2023-05-01', '19:00:00', 4, 'Window seat preferred');
+ insert into reservations ( table_id, customer_id, reservationDate, reservationTime, partySize, specialRequests)values ( 2, 2, '2023-05-03', '18:30:00', 6, NULL);
+ insert into reservations ( table_id, customer_id, reservationDate, reservationTime, partySize, specialRequests)values ( 3, 1, '2023-05-05', '20:00:00', 2, 'Anniversary celebration');

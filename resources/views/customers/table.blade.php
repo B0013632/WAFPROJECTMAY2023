@@ -20,7 +20,7 @@
             <td>{{ $customers->surname }}</td>
             <td>{{ $customers->email }}</td>
             <td>{{ $customers->phone }}</td>
-            <td>{{ $customers->vip }}</td>
+            <td>{{ $customers->vip ? 'Yes' : 'No' }}</td>
             <td>{{ $customers->comments }}</td>
                 <td width="120">
                     {!! Form::open(['route' => ['customers.destroy', $customers->id], 'method' => 'delete']) !!}

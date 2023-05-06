@@ -13,7 +13,7 @@
             <tr>
 			<td>{{ $tables->id }}</td>
             <td>{{ $tables->capacity }}</td>
-            <td>{{ $tables->booked }}</td>
+             <td>{{ $tables->booked ? 'Yes' : 'No' }}</td>
                 <td width="120">
                     {!! Form::open(['route' => ['tables.destroy', $tables->id], 'method' => 'delete']) !!}
                     <div class='btn-group'>

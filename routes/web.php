@@ -28,3 +28,6 @@ Route::resource('tables', App\Http\Controllers\tablesController::class);
 
 
 Route::resource('orders', App\Http\Controllers\ordersController::class);
+
+
+Route::resource('reservations', App\Http\Controllers\reservationsController::class);

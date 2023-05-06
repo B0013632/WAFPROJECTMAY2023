@@ -15,8 +15,9 @@
             <ul class="nav navbar-nav"> 
                 <li><a href="{{ route('employees.index') }}">Employees</a></li> 
                 <li><a href="{{ route('customers.index') }}">Customers</a></li> 
-				<li><a href="{{ route('tables.index') }}">Tables</a></li> 
 				<li><a href="{{ route('orders.index') }}">Orders</a></li> 
+				<li><a href="{{ route('reservations.index') }}">Reservations</a></li> 
+				<li><a href="{{ route('tables.index') }}">Tables</a></li> 
             </ul> 
         </nav> 
         <div id="page-content-wrapper"> 

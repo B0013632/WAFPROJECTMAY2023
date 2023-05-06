@@ -5,8 +5,8 @@
 		<th>Employee ID</th>
         <th>Firstname</th>
         <th>Surname</th>
-        <th>Employeetype</th>
-        <th>Dateofbirth</th>
+        <th>Employee Type</th>
+        <th>Date of birth</th>
         <th>Pps</th>
         <th>Full Time</th>
         <th colspan="3">Action</th>
@@ -21,7 +21,7 @@
             <td>{{ $employees->employeetype }}</td>
             <td>{{ $employees->dateofbirth }}</td>
             <td>{{ $employees->pps }}</td>
-            <td>{{ $employees->full_time }}</td>
+            <td>{{ $employees->full_time ? 'Yes' : 'No' }}</td>
                 <td width="120">
                     {!! Form::open(['route' => ['employees.destroy', $employees->id], 'method' => 'delete']) !!}
                     <div class='btn-group'>
