@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Model as Model;
 /**
  * Class employees
  * @package App\Models
- * @version May 6, 2023, 12:10 am UTC
+ * @version May 6, 2023, 7:36 am UTC
  *
  * @property \Illuminate\Database\Eloquent\Collection $orders
  * @property string $firstname

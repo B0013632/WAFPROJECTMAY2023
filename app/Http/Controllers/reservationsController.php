@@ -6,12 +6,27 @@ use App\Http\Requests\CreatereservationsRequest;
 use App\Http\Requests\UpdatereservationsRequest;
 use App\Repositories\reservationsRepository;
 use App\Http\Controllers\AppBaseController;
+use App\Models\tables as tables;
+use App\Models\customers as customers;
 use Illuminate\Http\Request;
 use Flash;
 use Response;
 
 class reservationsController extends AppBaseController
 {
+public function create()
+{
+    // Find all tables from the DB and return as an array of Table.php objects
+    $tables = Tables::all();
+
+    // Find all customers from the DB and return as an array of Customer.php objects
+    $customers = Customers::all();
+
+    // Return the reservations.create view with $tables and $customers as view variables
+    return view('reservations.create')->with('tables', $tables)->with('customers', $customers); 
+}
+	
+	
     /** @var reservationsRepository $reservationsRepository*/
     private $reservationsRepository;
 
@@ -40,10 +55,6 @@ class reservationsController extends AppBaseController
      *
      * @return Response
      */
-    public function create()
-    {
-        return view('reservations.create');
-    }
 
     /**
      * Store a newly created reservations in storage.

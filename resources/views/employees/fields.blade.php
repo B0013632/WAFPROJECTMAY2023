@@ -13,7 +13,12 @@
 <!-- Employeetype Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('employeetype', 'Employeetype:') !!}
-    {!! Form::text('employeetype', null, ['class' => 'form-control','maxlength' => 12,'maxlength' => 12]) !!}
+    <select name="employeetype" class="form-control">
+		<option value=""disabled selected>Select Employee Type</option>
+        <option value="Manager">Manager</option>
+        <option value="Bartender">Bartender</option>
+        <option value="Cleaner">Cleaner</option>
+    </select>
 </div>
 
 <!-- Dateofbirth Field -->

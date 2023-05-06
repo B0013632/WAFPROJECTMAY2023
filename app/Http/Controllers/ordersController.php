@@ -6,12 +6,33 @@ use App\Http\Requests\CreateordersRequest;
 use App\Http\Requests\UpdateordersRequest;
 use App\Repositories\ordersRepository;
 use App\Http\Controllers\AppBaseController;
+use App\Models\Customers as Customers;
+use App\Models\Employees as Employees;
+use App\Models\Tables as Tables;
 use Illuminate\Http\Request;
 use Flash;
 use Response;
 
 class ordersController extends AppBaseController
 {
+	public function create()
+	{
+		// Find all customers from the DB and return as an array of Customer.php objects
+		$customers = Customers::all();
+	
+		// Find all employees from the DB and return as an array of Employees.php objects
+		$employees = \App\Models\Employees::all();
+		
+		// Find all tables from the DB and return as an array of Table.php objects
+		$tables = Tables::all();
+
+
+
+    // Return the orders.create view with $tables and $customers as view variables
+    return view('orders.create')->with('customers', $customers)->with('employees', $employees)->with('tables', $tables);
+	}
+	
+	
     /** @var ordersRepository $ordersRepository*/
     private $ordersRepository;
 
@@ -35,15 +56,6 @@ class ordersController extends AppBaseController
             ->with('orders', $orders);
     }
 
-    /**
-     * Show the form for creating a new orders.
-     *
-     * @return Response
-     */
-    public function create()
-    {
-        return view('orders.create');
-    }
 
     /**
      * Store a newly created orders in storage.

@@ -9,10 +9,10 @@ use Illuminate\Database\Eloquent\Model as Model;
 /**
  * Class tables
  * @package App\Models
- * @version May 6, 2023, 12:49 am UTC
+ * @version May 6, 2023, 4:10 am UTC
  *
  * @property \Illuminate\Database\Eloquent\Collection $orders
- * @property \Illuminate\Database\Eloquent\Collection $customers
+ * @property \Illuminate\Database\Eloquent\Collection $reservations
  * @property integer $capacity
  * @property boolean $booked
  */
@@ -63,10 +63,10 @@ class tables extends Model
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
      **/
-    public function customers()
+    public function reservations()
     {
-        return $this->belongsToMany(\App\Models\Customer::class, 'reservations');
+        return $this->hasMany(\App\Models\Reservation::class, 'table_id');
     }
 }

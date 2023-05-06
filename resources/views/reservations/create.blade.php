@@ -22,8 +22,8 @@
             <div class="card-body">
 
                 <div class="row">
-                    @include('reservations.fields')
-                </div>
+					@include('reservations.fields', ['tables' => $tables, 'customers' => $customers])
+				</div>
 
             </div>
 

@@ -22,7 +22,7 @@
             <div class="card-body">
 
                 <div class="row">
-                    @include('orders.fields')
+                    @include('orders.fields', ['customers' => $customers, 'employees' => $employees, 'tables' => $tables])
                 </div>
 
             </div>

@@ -1,7 +1,7 @@
 [
     {
         "name": "id",
-        "dbType": "integer,false",
+        "dbType": "integer,true",
         "htmlType": null,
         "validations": null,
         "searchable": false,
@@ -77,6 +77,6 @@
     },
     {
         "type": "relation",
-        "relation": "mtm,Customer,reservations"
+        "relation": "1tm,Reservation,table_id"
     }
 ]

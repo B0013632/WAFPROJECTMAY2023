@@ -2,7 +2,7 @@
     <table class="table" id="customers-table">
         <thead>
         <tr>
-		<th>Table ID</th>
+		<th>Customer ID</th>
         <th>Firstname</th>
         <th>Surname</th>
         <th>Email</th>

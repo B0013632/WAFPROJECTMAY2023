@@ -1,13 +1,23 @@
 <!-- Table Id Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('table_id', 'Table Id:') !!}
-    {!! Form::number('table_id', null, ['class' => 'form-control']) !!}
+    <select name="table_id" class="form-control">
+	<option value=""disabled selected>Select your Table ID</option>
+		@foreach ($tables as $table)
+			<option value="{{ $table->id }}">{{ $table->id }}</option>
+		@endforeach
+	</select>
 </div>
 
 <!-- Customer Id Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('customer_id', 'Customer Id:') !!}
-    {!! Form::number('customer_id', null, ['class' => 'form-control']) !!}
+    <select name="customer_id" class="form-control">
+	<option value=""disabled selected>Select your Customer ID?</option>
+		@foreach ($customers as $customer)
+			<option value="{{ $customer->id }}">{{ $customer->id }}</option>
+		@endforeach
+	</select>
 </div>
 
 <!-- Reservationdate Field -->

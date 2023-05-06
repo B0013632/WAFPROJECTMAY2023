@@ -2,26 +2,24 @@
     <table class="table" id="employees-table">
         <thead>
         <tr>
-		<th>Employee ID</th>
-        <th>Firstname</th>
+            <th>Firstname</th>
         <th>Surname</th>
-        <th>Employee Type</th>
-        <th>Date of birth</th>
+        <th>Employeetype</th>
+        <th>Dateofbirth</th>
         <th>Pps</th>
         <th>Full Time</th>
-        <th colspan="3">Action</th>
+            <th colspan="3">Action</th>
         </tr>
         </thead>
         <tbody>
         @foreach($employees as $employees)
             <tr>
-			<td>{{ $employees->id }}</td>
-            <td>{{ $employees->firstname }}</td>
+                <td>{{ $employees->firstname }}</td>
             <td>{{ $employees->surname }}</td>
             <td>{{ $employees->employeetype }}</td>
             <td>{{ $employees->dateofbirth }}</td>
             <td>{{ $employees->pps }}</td>
-            <td>{{ $employees->full_time ? 'Yes' : 'No' }}</td>
+            <td>{{ $employees->full_time ? 'Yes' : 'No'  }}</td>
                 <td width="120">
                     {!! Form::open(['route' => ['employees.destroy', $employees->id], 'method' => 'delete']) !!}
                     <div class='btn-group'>
