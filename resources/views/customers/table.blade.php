@@ -1,35 +1,35 @@
 <div class="table-responsive">
-    <table class="table" id="employees-table">
+    <table class="table" id="customers-table">
         <thead>
         <tr>
-		<th>Employee ID</th>
+		<th>Table ID</th>
         <th>Firstname</th>
         <th>Surname</th>
-        <th>Employeetype</th>
-        <th>Dateofbirth</th>
-        <th>Pps</th>
-        <th>Full Time</th>
-        <th colspan="3">Action</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Vip</th>
+        <th>Comments</th>
+            <th colspan="3">Action</th>
         </tr>
         </thead>
         <tbody>
-        @foreach($employees as $employees)
+        @foreach($customers as $customers)
             <tr>
-			<td>{{ $employees->id }}</td>
-            <td>{{ $employees->firstname }}</td>
-            <td>{{ $employees->surname }}</td>
-            <td>{{ $employees->employeetype }}</td>
-            <td>{{ $employees->dateofbirth }}</td>
-            <td>{{ $employees->pps }}</td>
-            <td>{{ $employees->full_time }}</td>
+			<td>{{ $customers->id }}</td>
+            <td>{{ $customers->firstname }}</td>
+            <td>{{ $customers->surname }}</td>
+            <td>{{ $customers->email }}</td>
+            <td>{{ $customers->phone }}</td>
+            <td>{{ $customers->vip }}</td>
+            <td>{{ $customers->comments }}</td>
                 <td width="120">
-                    {!! Form::open(['route' => ['employees.destroy', $employees->id], 'method' => 'delete']) !!}
+                    {!! Form::open(['route' => ['customers.destroy', $customers->id], 'method' => 'delete']) !!}
                     <div class='btn-group'>
-                        <a href="{{ route('employees.show', [$employees->id]) }}"
+                        <a href="{{ route('customers.show', [$customers->id]) }}"
                            class='btn btn-default btn-xs'>
                             <i class="far fa-eye"></i>
                         </a>
-                        <a href="{{ route('employees.edit', [$employees->id]) }}"
+                        <a href="{{ route('customers.edit', [$customers->id]) }}"
                            class='btn btn-default btn-xs'>
                             <i class="far fa-edit"></i>
                         </a>

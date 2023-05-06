@@ -61,10 +61,13 @@ drop database if exists bar;
     id int auto_increment,
     customer_id int,
     employee_id int,
-	descriptionn varchar(100),
+	order_description varchar(100),
     table_id int,
     order_date date,
     order_time time,
+	created_at datetime,
+    updated_at datetime,
+    deleted_at datetime,
     total decimal(10,2),
     primary key (id),
     foreign key (customer_id) references customers(id),
@@ -88,10 +91,10 @@ drop database if exists bar;
  insert into tables (id, capacity, booked)values (3, 6, false);
  insert into tables (id, capacity, booked)values (4, 6, true);
  
- insert into orders (customer_id, employee_id, table_id, descriptionn, order_date, order_time, total)values ( 1, 3, 2, 'Two Vodkas', '2023-04-30', '18:30:00', 16.00); 
- insert into orders (customer_id, employee_id, table_id, descriptionn, order_date, order_time, total)values ( 2, 2, 1, 'Three Gins', '2023-04-30', '19:00:00', 24.00);
- insert into orders (customer_id, employee_id, table_id, descriptionn, order_date, order_time, total)values ( 3, 1, 4, 'Four Tequilias', '2023-04-30', '20:00:00', 40.00); 
- insert into orders (customer_id, employee_id, table_id, descriptionn, order_date, order_time, total)values ( 4, 4, 3, 'Eight Coronas', '2023-04-30', '20:30:00', 40.00);
+ insert into orders (customer_id, employee_id, table_id, order_description, order_date, order_time, total)values ( 1, 3, 2, 'Two Vodkas', '2023-04-30', '18:30:00', 16.00); 
+ insert into orders (customer_id, employee_id, table_id, order_description, order_date, order_time, total)values ( 2, 2, 1, 'Three Gins', '2023-04-30', '19:00:00', 24.00);
+ insert into orders (customer_id, employee_id, table_id, order_description, order_date, order_time, total)values ( 3, 1, 4, 'Four Tequilias', '2023-04-30', '20:00:00', 40.00); 
+ insert into orders (customer_id, employee_id, table_id, order_description, order_date, order_time, total)values ( 4, 4, 3, 'Eight Coronas', '2023-04-30', '20:30:00', 40.00);
  
  insert into reservations (reservation_id, table_id, customer_id, reservationDate, reservationTime, partySize, specialRequests)values (1, 1, 2, '2023-05-01', '19:00:00', 4, 'Window seat preferred');
  insert into reservations (reservation_id, table_id, customer_id, reservationDate, reservationTime, partySize, specialRequests)values (2, 2, 2, '2023-05-03', '18:30:00', 6, NULL);

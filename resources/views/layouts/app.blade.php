@@ -1,7 +1,8 @@
 <!DOCTYPE html>
     <head> 
         <meta charset="UTF-8"> 
-        <title>Title TennisClub</title> 
+        <title>TUD BAR</title> 
+		<link rel="icon" href="https://vle-bn.tudublin.ie/pluginfile.php/1/theme_adaptable/favicon/1683025199/faviconTU.ico">
         <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'> 
         <!-- Bootstrap 3.3.7 --> 
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> 
@@ -12,8 +13,10 @@
     <body > 
         <nav class="navbar navbar-default navbar-static-top"> 
             <ul class="nav navbar-nav"> 
-                <li><a href="https://laravel.com/docs">Laravel Documentation</a></li> 
-                <li><a href="https://laracasts.com/">Laravel Video Tutorials</a></li> 
+                <li><a href="{{ route('employees.index') }}">Employees</a></li> 
+                <li><a href="{{ route('customers.index') }}">Customers</a></li> 
+				<li><a href="{{ route('tables.index') }}">Tables</a></li> 
+				<li><a href="{{ route('orders.index') }}">Orders</a></li> 
             </ul> 
         </nav> 
         <div id="page-content-wrapper"> 
