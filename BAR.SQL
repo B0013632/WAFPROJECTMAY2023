@@ -86,10 +86,22 @@ drop database if exists bar;
  insert into customers (firstname, surname, email, phone, vip, comments)values ( 'Eoin', 'Connors', 'eoinconnors@example.com', '082712534', false, null);
  insert into customers (firstname, surname, email, phone, vip, comments)values ( 'Liam', 'Davids', 'liamdavids@example.com', '089571234', true, '5 drink maximum');
 
+ insert into tables ( capacity, booked)values ( 2, false);
+ insert into tables ( capacity, booked)values ( 2, false);
+ insert into tables ( capacity, booked)values ( 2, true);
+ insert into tables ( capacity, booked)values ( 3, true);
+ insert into tables ( capacity, booked)values ( 3, true);
+ insert into tables ( capacity, booked)values ( 4, false);
+ insert into tables ( capacity, booked)values ( 4, false);
+ insert into tables ( capacity, booked)values ( 4, true);
+ insert into tables ( capacity, booked)values ( 4, true);
  insert into tables ( capacity, booked)values ( 6, true);
  insert into tables ( capacity, booked)values ( 6, true);
- insert into tables ( capacity, booked)values ( 6, false);
  insert into tables ( capacity, booked)values ( 6, true);
+ insert into tables ( capacity, booked)values ( 6, true);
+ insert into tables ( capacity, booked)values ( 8, false);
+ insert into tables ( capacity, booked)values ( 8, true);
+ insert into tables ( capacity, booked)values ( 8, true);
  
  insert into orders (customer_id, employee_id, table_id, order_description, order_date, order_time, total)values ( 1, 3, 2, 'Two Vodkas', '2023-04-30', '18:30:00', 16.00); 
  insert into orders (customer_id, employee_id, table_id, order_description, order_date, order_time, total)values ( 2, 2, 1, 'Three Gins', '2023-04-30', '19:00:00', 24.00);

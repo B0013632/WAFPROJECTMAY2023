@@ -22,24 +22,14 @@
 
 <!-- Reservationdate Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('reservationDate', 'Reservationdate:') !!}
-    {!! Form::text('reservationDate', null, ['class' => 'form-control','id'=>'reservationDate']) !!}
+    {!! Form::label('reservationDate', 'Reservation Date:') !!}
+    {!! Form::text('reservationDate', null, ['class' => 'form-control', 'id' => 'reservationDate']) !!}
 </div>
-
-@push('page_scripts')
-    <script type="text/javascript">
-        $('#reservationDate').datetimepicker({
-            format: 'YYYY-MM-DD HH:mm:ss',
-            useCurrent: true,
-            sideBySide: true
-        })
-    </script>
-@endpush
 
 <!-- Reservationtime Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('reservationTime', 'Reservationtime:') !!}
-    {!! Form::text('reservationTime', null, ['class' => 'form-control']) !!}
+    {!! Form::label('reservationTime', 'Reservation Time:') !!}
+    {!! Form::text('reservationTime', null, ['class' => 'form-control', 'id' => 'reservationTime']) !!}
 </div>
 
 <!-- Partysize Field -->

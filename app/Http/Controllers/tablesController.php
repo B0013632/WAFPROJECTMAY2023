@@ -35,6 +35,7 @@ class tablesController extends AppBaseController
             ->with('tables', $tables);
     }
 
+
     /**
      * Show the form for creating a new tables.
      *

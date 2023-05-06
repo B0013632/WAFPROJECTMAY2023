@@ -2,7 +2,8 @@
     <table class="table" id="employees-table">
         <thead>
         <tr>
-            <th>Firstname</th>
+		<th>Employee ID</th>
+        <th>Firstname</th>
         <th>Surname</th>
         <th>Employeetype</th>
         <th>Dateofbirth</th>
@@ -14,7 +15,8 @@
         <tbody>
         @foreach($employees as $employees)
             <tr>
-                <td>{{ $employees->firstname }}</td>
+			<td>{{ $employees->id }}</td>
+            <td>{{ $employees->firstname }}</td>
             <td>{{ $employees->surname }}</td>
             <td>{{ $employees->employeetype }}</td>
             <td>{{ $employees->dateofbirth }}</td>
