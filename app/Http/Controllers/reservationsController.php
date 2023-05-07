@@ -104,14 +104,10 @@ public function create()
     public function edit($id)
     {
         $reservations = $this->reservationsRepository->find($id);
-
-        if (empty($reservations)) {
-            Flash::error('Reservations not found');
-
-            return redirect(route('reservations.index'));
-        }
-
-        return view('reservations.edit')->with('reservations', $reservations);
+        $tables = Tables::all();
+        $customers = Customers::all();
+        
+        return view('reservations.edit', compact('reservations', 'tables', 'customers'));
     }
 
     /**

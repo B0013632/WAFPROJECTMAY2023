@@ -2,7 +2,7 @@
 @section('content') 
 @include('calendar.assets')
 @include('calendar.modalreservation')
-<div id="calendar"></div> 
+<div id="calendar" ></div> 
 <script> 
     document.addEventListener('DOMContentLoaded', function() { 
         var calendarEl = document.getElementById('calendar'); 

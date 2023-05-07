@@ -1,6 +1,11 @@
 <div class="table-responsive">
-    <table class="table" id="tables-table">
-        <thead>
+<style>
+        body {
+          background-color: #F17b92;
+        }
+        </style>
+    <table class="table" id="tables-table" style="background-color: #f9f9f9; border: 1px solid #ddd;">
+        <thead style="background-color: #4CAF50; color: white;">
         <tr>
 		<th>Table ID</th>
         <th>Capacity</th>

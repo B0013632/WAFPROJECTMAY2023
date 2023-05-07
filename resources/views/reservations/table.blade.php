@@ -1,6 +1,11 @@
 <div class="table-responsive">
-    <table class="table" id="reservations-table">
-        <thead>
+<style>
+        body {
+          background-color: #Ce8e10;
+        }
+        </style>
+    <table class="table" id="reservations-table" style="background-color: #f9f9f9; border: 1px solid #ddd;">
+        <thead style="background-color: #4CAF50; color: white;">
         <tr>
 		<th>Reservation Id</th>
         <th>Table Id</th>

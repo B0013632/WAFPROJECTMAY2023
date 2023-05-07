@@ -1,6 +1,11 @@
 <div class="table-responsive">
-    <table class="table" id="orders-table">
-        <thead>
+<style>
+        body {
+          background-color: #Bb302f;
+        }
+        </style>
+    <table class="table" id="orders-table" style="background-color: #f9f9f9; border: 1px solid #ddd;">
+        <thead style="background-color: #4CAF50; color: white;">
         <tr>
 		<th>Order Id</th>
         <th>Customer Id</th>
