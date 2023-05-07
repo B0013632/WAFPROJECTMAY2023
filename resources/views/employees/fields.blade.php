@@ -1,3 +1,10 @@
+
+
+
+
+
+
+
 <!-- Firstname Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('firstname', 'Firstname:') !!}
@@ -22,9 +29,10 @@
 </div>
 
 <!-- Dateofbirth Field -->
+
 <div class="form-group col-sm-6">
     {!! Form::label('dateofbirth', 'Dateofbirth:') !!}
-    {!! Form::text('dateofbirth', null, ['class' => 'form-control','id'=>'dateofbirth']) !!}
+    {!! Form::input('date', 'dateofbirth', null, ['class' => 'form-control']) !!}
 </div>
 
 @push('page_scripts')
@@ -33,7 +41,7 @@
             format: 'YYYY-MM-DD HH:mm:ss',
             useCurrent: true,
             sideBySide: true
-        })
+        });
     </script>
 @endpush
 

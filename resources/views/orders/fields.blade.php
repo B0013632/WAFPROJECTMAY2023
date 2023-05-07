@@ -9,7 +9,6 @@
 	</select>
 </div>
 
-<input type="hidden" name="employee_id" value="{{Auth::user()->employee->id}}">
 
 <!-- Order Description Field -->
 <div class="form-group col-sm-6">
@@ -28,26 +27,18 @@
 	</select>
 </div>
 
-<!-- Order Date Field -->
+
+    <!-- Order Date Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('order_date', 'Order Date:') !!}
-    {!! Form::text('order_date', null, ['class' => 'form-control','id'=>'order_date']) !!}
+    {!! Form::date('order_date', null, ['class' => 'form-control', 'placeholder' => 'YYYY-MM-DD']) !!}
 </div>
 
-@push('page_scripts')
-    <script type="text/javascript">
-        $('#order_date').datetimepicker({
-            format: 'YYYY-MM-DD HH:mm:ss',
-            useCurrent: true,
-            sideBySide: true
-        })
-    </script>
-@endpush
 
 <!-- Order Time Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('order_time', 'Order Time:') !!}
-    {!! Form::text('order_time', null, ['class' => 'form-control']) !!}
+    <input type="time" id="order_time" name="order_time">
 </div>
 
 <!-- Total Field -->
