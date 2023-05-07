@@ -74,6 +74,24 @@ drop database if exists bar;
     foreign key (employee_id) references employees(id),
     foreign key (table_id) references tables(id)
  );
+ 
+ 
+ DROP VIEW IF EXISTS event;
+CREATE VIEW event AS
+SELECT CONCAT(customers.firstname, " ", customers.surname) AS title, 
+       CONCAT(reservations.reservationDate, "T", reservations.reservationTime) AS start, 
+       CONCAT(reservations.reservationDate, "T", ADDTIME(reservations.reservationTime, '02:00:00')) AS end, 
+       CONCAT("Table ", tables.id, ": ", reservations.specialRequests) AS specialRequest, 
+       reservations.id AS reservation_id,
+       tables.id AS table_id
+FROM reservations
+INNER JOIN customers ON reservations.customer_id = customers.id
+INNER JOIN tables ON reservations.table_id = tables.id;
+
+SELECT * FROM event
+ 
+ 
+ 
  insert into employees (firstname,surname,employeetype,dateofbirth,pps,full_time) values ('oliver','kerr','Bartender','2000-01-31', '12345678B', true);
  insert into employees (firstname,surname,employeetype,dateofbirth,pps,full_time) values ('morgan','bartlett','Bartender','1985-10-28', '43215678E', true);
  insert into employees (firstname,surname,employeetype,dateofbirth,pps,full_time) values ('rebecca','house','Bartender','1993-08-01', '98765678D', true);
@@ -85,7 +103,17 @@ drop database if exists bar;
  insert into customers (firstname, surname, email, phone, vip, comments)values ( 'Jane', 'Doe', 'jane.doe@example.com', '0873456335', false, null);
  insert into customers (firstname, surname, email, phone, vip, comments)values ( 'Eoin', 'Connors', 'eoinconnors@example.com', '082712534', false, null);
  insert into customers (firstname, surname, email, phone, vip, comments)values ( 'Liam', 'Davids', 'liamdavids@example.com', '089571234', true, '5 drink maximum');
-
+ insert into customers (firstname, surname, email, phone, vip, comments)VALUES ('John', 'Smith', 'john.smith@example.com', '0892321234', true, 'Prefers outdoor seating');
+ insert into customers (firstname, surname, email, phone, vip, comments)VALUES ('Mary', 'Taylor', 'mary.taylor@example.com', '0892325678', false, 'Allergic to nuts');
+ insert into customers (firstname, surname, email, phone, vip, comments)VALUES ('Robert', 'Johnson', 'robert.johnson@example.com', '0892323456', false, 'No special requirements');
+ insert into customers (firstname, surname, email, phone, vip, comments)VALUES ('Emily', 'Davis', 'emily.davis@example.com', '0892329876', true, 'Needs wheelchair access');
+ insert into customers (firstname, surname, email, phone, vip, comments)VALUES ('William', 'Brown', 'william.brown@example.com', '0892326666', false, 'Prefers non-smoking area');
+ insert into customers (firstname, surname, email, phone, vip, comments)VALUES ('Elizabeth', 'Garcia', 'elizabeth.garcia@example.com', '0892321111', true, 'Vegetarian');
+ insert into customers (firstname, surname, email, phone, vip, comments)VALUES ('Michael', 'Wilson', 'michael.wilson@example.com', '0892322222', false, 'Prefers spicy food');
+ insert into customers (firstname, surname, email, phone, vip, comments)VALUES ('Linda', 'Martinez', 'linda.martinez@example.com', '0892324444', false, 'No special requirements');
+ insert into customers (firstname, surname, email, phone, vip, comments)VALUES ('David', 'Anderson', 'david.anderson@example.com', '0892328888', true, 'Gluten-free');
+ insert into customers (firstname, surname, email, phone, vip, comments)VALUES ('Barbara', 'Hernandez', 'barbara.hernandez@example.com', '0892329999', false, 'Prefers quiet area');
+ 
  insert into tables ( capacity, booked)values ( 2, false);
  insert into tables ( capacity, booked)values ( 2, false);
  insert into tables ( capacity, booked)values ( 2, true);

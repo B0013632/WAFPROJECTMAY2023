@@ -32,26 +32,26 @@ Route::get('/dashboard', function () {
 
 require __DIR__.'/auth.php';
 
-
-Route::resource('employees', App\Http\Controllers\employeesController::class);
-
-
 Route::resource('customers', App\Http\Controllers\customersController::class);
-
-
-Route::resource('tables', App\Http\Controllers\tablesController::class);
-
-
-Route::resource('orders', App\Http\Controllers\ordersController::class);
-
+Route::get('/customers/new', 'App\Http\Controllers\CustomerController@new');
+Route::post('/customers/create', 'App\Http\Controllers\CustomerController@create')->name('customers.create'); 
 
 Route::resource('reservations', App\Http\Controllers\reservationsController::class);
+Route::post('/reservations', 'App\Http\Controllers\ReservationsController@store')->name('reservations.store');
 
-Route::get('/loggedInEmployees','employeesController@getLoggedInEmployeesDetails');
 
 Route::get('/calendar/display', 'App\Http\Controllers\CalendarController@display')->name('calendar.display');
 Route::get('/calendar/json','App\Http\Controllers\CalendarController@json')->name('calendar.json');
 
+Route::resource('tables', App\Http\Controllers\tablesController::class);
 
-Route::get('/customers/new', 'App\Http\Controllers\CustomerController@new');
-Route::post('/customers/create', 'App\Http\Controllers\CustomerController@create')->name('customers.create'); 
+Route::resource('orders', App\Http\Controllers\ordersController::class);
+
+Route::resource('employees', App\Http\Controllers\employeesController::class);
+Route::get('/loggedInEmployees','employeesController@getLoggedInEmployeesDetails');
+
+
+
+
+
+

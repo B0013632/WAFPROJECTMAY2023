@@ -29,7 +29,6 @@
 </div>
 
 <!-- Dateofbirth Field -->
-
 <div class="form-group col-sm-6">
     {!! Form::label('dateofbirth', 'Dateofbirth:') !!}
     {!! Form::input('date', 'dateofbirth', null, ['class' => 'form-control']) !!}

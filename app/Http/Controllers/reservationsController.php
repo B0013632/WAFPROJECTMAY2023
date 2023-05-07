@@ -12,7 +12,7 @@ use Illuminate\Http\Request;
 use Flash;
 use Response;
 
-class reservationsController extends AppBaseController
+class ReservationsController extends AppBaseController
 {
 public function create()
 {
