@@ -20,8 +20,7 @@
           defaultDate: '2023-05-08', 
           editable: true, 
           eventLimit: true, // allow "more" link when too many events   
-          events: [ { title: 'All Day Event', start: '2019-08-01' }, 
-                    { title: 'Long Event', start: '2019-08-07', end: '2019-08-10' } ] 
+          events: '{{ route('calendar.json') }}'
      }); 
      calendar.render(); }); 
 </script> 

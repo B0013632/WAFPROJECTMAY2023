@@ -19,6 +19,7 @@
       <li><a href="{{ route('orders.index') }}">Orders</a></li>
       <li><a href="{{ route('reservations.index') }}">Reservations</a></li>
       <li><a href="{{ route('tables.index') }}">Tables</a></li>
+	  <li><a href="{{ route('calendar.display') }}">Reservations Calendar</a></li>
     </ul>
 	@include('layouts.navAuth')
   </nav>
