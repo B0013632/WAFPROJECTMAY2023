@@ -54,9 +54,9 @@ Route::get('/loggedInEmployees','employeesController@getLoggedInEmployeesDetails
 //Route::resource('drinks', App\Http\Controllers\drinksController::class);
 Route::get('drinks/displaygrid', 'App\Http\Controllers\drinksController@displaygrid')->name('drinks.displaygrid');
 
-//Route::resource('products', 'productController');
+//Route::resource('drinks', 'drinksController');
 
 Route::resource('orderdetails', App\Http\Controllers\orderdetailController::class);
 
-
+Route::get('drinks/additem/{id}', 'App\Http\Controllers\drinksController@additem')->name('drinks.additem');
 
