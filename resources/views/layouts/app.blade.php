@@ -40,6 +40,10 @@
 			<li class="nav-item">
 				<a class="nav-link"] href="{{ route('calendar.display') }}">Reservations Calendar</a>
 			</li>
+			<li class="nav-item">
+				<a class="nav-link"] href="{{ route('drinks.displaygrid') }}">Drinks Menu</a>
+			</li>
+
 		</ul>
 			@include('layouts.navAuth')
 	</div>

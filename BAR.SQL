@@ -88,9 +88,47 @@ FROM reservations
 INNER JOIN customers ON reservations.customer_id = customers.id
 INNER JOIN tables ON reservations.table_id = tables.id;
 
-SELECT * FROM event
+
+ 
+  create table drinks (
+ id int auto_increment,
+ name varchar(30),
+ description varchar(30),
+ alcohol DECIMAL(3,3),
+ price decimal(18,3),
+ image varchar(30),
+ created_at datetime,
+ updated_at datetime,
+ deleted_at datetime,
+ primary key(id)
+ );
  
  
+ create table orderdetail (
+ id int auto_increment,
+ drinkid int,
+ orderid int,
+ quantity int,
+ subtotal decimal(18,3),
+ created_at datetime,
+ updated_at datetime,
+ deleted_at datetime,
+ primary key(id),
+ foreign key(drinkid) references drinks(id),
+ foreign key(orderid) references orders(id)
+ );
+ 
+ INSERT INTO drinks (name, description, alcohol, price, image, created_at, updated_at, deleted_at)VALUES ('Mojito', 'Refreshing cocktail', 0.08, 8.99, 'mojito.jpg', NOW(), NOW(), NULL);
+ INSERT INTO drinks (name, description, alcohol, price, image, created_at, updated_at, deleted_at)VALUES ('Cosmopolitan', 'Classic vodka-based cocktail', 0.20, 9.99, 'cosmopolitan.jpg', NOW(), NOW(), NULL);
+ INSERT INTO drinks (name, description, alcohol, price, image, created_at, updated_at, deleted_at)VALUES ('Old Fashioned', 'Timeless bourbon cocktail', 0.35, 10.99, 'old_fashioned.jpg', NOW(), NOW(), NULL);
+ INSERT INTO drinks (name, description, alcohol, price, image, created_at, updated_at, deleted_at)VALUES ('Piña Colada', 'Creamy tropical cocktail ', 0.10, 7.99, 'pina_colada.jpg', NOW(), NOW(), NULL);
+ INSERT INTO drinks (name, description, alcohol, price, image, created_at, updated_at, deleted_at)VALUES ('Margarita', 'Tequila-based cocktail', 0.25, 8.49, 'margarita.jpg', NOW(), NOW(), NULL);
+ INSERT INTO drinks (name, description, alcohol, price, image, created_at, updated_at, deleted_at)VALUES ('Martini', 'Elegant gin', 0.30, 11.99, 'martini.jpg', NOW(), NOW(), NULL);
+ INSERT INTO drinks (name, description, alcohol, price, image, created_at, updated_at, deleted_at)VALUES ('Sangria', 'Spanish wine punch', 0.05, 6.99, 'sangria.jpg', NOW(), NOW(), NULL);
+ INSERT INTO drinks (name, description, alcohol, price, image, created_at, updated_at, deleted_at)VALUES ('Mint Julep', 'Classic bourbon cocktail', 0.40, 9.49, 'mint_julep.jpg', NOW(), NOW(), NULL);
+
+ insert into orderdetail(drinkid,orderid,quantity) values (1,2,2);
+ insert into orderdetail(drinkid,orderid,quantity) values (1,2,2);shoppingcart
  
  insert into employees (firstname,surname,employeetype,dateofbirth,pps,full_time) values ('oliver','kerr','Bartender','2000-01-31', '12345678B', true);
  insert into employees (firstname,surname,employeetype,dateofbirth,pps,full_time) values ('morgan','bartlett','Bartender','1985-10-28', '43215678E', true);
@@ -144,6 +182,3 @@ SELECT * FROM event
  alter table employees add constraint FK_employee_user foreign key(userid) references users(id);
  ALTER TABLE employees add constraint FK_employee_user_unique UNIQUE (userid); 
 
-
-SELECT * FROM users
-update member set userid=3 where name="Morgan Bartlett";
